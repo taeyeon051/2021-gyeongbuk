@@ -1,0 +1,242 @@
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+body { background-color: #faf9f4; }
+a, a:hover { text-decoration: none; }
+
+
+/* 헤더 영역 */
+
+header {
+    padding: 0 120px;
+    height: 90px;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    padding: 0;
+}
+
+.fa-bars {
+    display: none;
+}
+
+#menu {
+    width: 500px;
+    height: 100%;
+    margin-left: 200px;
+    background-color: #fff;
+    display: flex;
+}
+
+#menu>li {
+    width: 120px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    position: relative;
+}
+
+#menu>li>a {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#menu>li:hover>a { padding-top: 2px; border-bottom: 2px solid #333; }
+
+li>ul {
+    position: absolute;
+    top: 89px;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: .5s;
+}
+
+li:hover>ul {
+    transform: translateY(1px);
+}
+
+li>ul a {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    border-top: 1px solid #aaa;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+li>ul a { color: #333; transition: .3s; }
+li>ul a:hover { background-color: #333; color: #fff; }
+
+.login-btns { width: 200px; }
+.login-btns * { font-size: 14px; }
+.login-btns a { margin-left: 5px; color: #333; }
+.menu-bar { display: flex; align-items: center; color: #999; cursor: default; }
+
+/* 메뉴 관리 영역 */
+
+#menu-manage {
+    width: 800px;
+    min-height: 450px;
+    margin: 100px 0;
+}
+
+.table thead th,
+.table tbody td {
+    border: 1px solid #333;
+}
+
+.table th,
+.table td {
+    text-align: center;
+}
+
+#main-menu-list th:nth-child(1) { width: 10%; }
+#main-menu-list th:nth-child(2) { width: 35%; }
+#main-menu-list th:nth-child(3) { width: 20%; }
+#main-menu-list th:nth-child(4) { width: 20%; }
+#main-menu-list th:nth-child(5) { width: 15%; }
+
+.table select {
+    width: 100%;
+    height: 100%;
+    text-align-last: center;
+    text-align: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#sub-menu-list th:nth-child(1) { width: 10%; }
+#sub-menu-list th:nth-child(2) { width: 25%; }
+#sub-menu-list th:nth-child(3) { width: 15%; }
+#sub-menu-list th:nth-child(4) { width: 18%; }
+#sub-menu-list th:nth-child(5) { width: 17%; }
+#sub-menu-list th:nth-child(6) { width: 15%; }
+
+
+/* 푸터 영역 */
+
+footer {
+    height: 300px;
+    justify-content: space-evenly;
+    background-color: #e3e1cc;
+}
+
+.sns>img {
+    width: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+/* 팝업 */
+
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    width: 600px;
+    height: 200px;
+    position: relative;
+    background-color: #fff;
+}
+
+#addsubmenu-popup>.inner,
+#login-popup>.inner { height: 270px; }
+#register-popup>.inner { height: 330px; }
+#layout-popup>.inner,
+#text-input-popup>.inner { height: 400px; }
+
+.popup-header {
+    height: 35px;
+}
+
+.popup-header>.close-btn {
+    font-size: 18px;
+}
+
+.popup-btns>.btn {
+    margin-left: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 15px;
+    background-clip: padding-box;
+    border: 3px solid transparent;
+}
+
+
+/* 내용관리 영역 */
+
+.content-manage-page {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0; left: 100%;
+    z-index: 500;
+    background-color: #fff;
+}
+
+.content-manage-page>.inner {
+    width: 1200px;
+    height: 820px;
+}
+
+.content-manage-btns>.btn {
+    margin: 0 10px;
+}
+
+#content-div {
+    width: 1200px;
+    height: 700px;
+    box-sizing: unset;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.content-layout {
+    border: 1px solid #f00;
+    position: absolute;
+    background-size: 100% 100%;
+    background-blend-mode: multiply;
+}
+
+.content-layout.selected {
+    background-color: #e5e5ff;
+}
+
+.content-text {
+    padding: 5px 10px;
+    cursor: default;
+}
